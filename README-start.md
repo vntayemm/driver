@@ -13,6 +13,17 @@ npm i -g typings
 
 ng help
 ng new projectName
+ng serve
+
+//dist
+git init
+git *
+git add *
+git commit -m "<command>"
+git remote add azure <ftpLink>
+git push azure master ftp://waws-prod-sn1-071.ftp.azurewebsites.windows.net
+
+https://iotminhnguyen@driverlicense.scm.azurewebsites.net:443/driverlicense.git
 
 //Api
 npm i -g yo //aspnet
