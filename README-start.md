@@ -12,7 +12,9 @@ npm install -g @angular/cli
 npm i -g typings
 
 ng help
+ng new projectName
 
 //Api
 npm i -g yo //aspnet
 npm i -g generator-aspnet
+dotnet new 

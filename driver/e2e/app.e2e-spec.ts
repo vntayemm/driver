@@ -1,14 +1,14 @@
-import {AngularTOHPage} from './app.po';
+import { DriverPage } from './app.po';
 
-describe('angular-hero-cli App', function () {
-  let page: AngularTOHPage;
+describe('driver App', () => {
+  let page: DriverPage;
 
   beforeEach(() => {
-    page = new AngularTOHPage();
+    page = new DriverPage();
   });
 
-  it('Title', () => {
+  it('should display message saying app works', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Top Heroes');
+    expect(page.getParagraphText()).toEqual('app works!');
   });
 });
