@@ -1,8 +1,12 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Driver.Api.Extensions;
+using Driver.Api.Middleware;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Owin;
+using System.Web.Http;
 
 namespace Driver.Api
 {
@@ -39,15 +43,23 @@ namespace Driver.Api
 
             app.UseMvc();
 
-            //app.UseMiddleware<DriverAspNetCoreMiddleware>();
-            //app.UseMiddleware<DriverOwinMiddleware>();
+            //NancyOwin Middleware
+            //app.UseOwin(x => x.UseNance());
 
-            //Web API config
-            //var config = new HttpConfiguration();
-            //config.MapHttpAttributeRoutes();
-            app.UseOwin();
+            //Use Asp.Net Core Middleware
+            app.UseMiddleware<DriverAspNetCoreMiddleware>();
 
-            //SignalR config
+            //Use OWIN Middleware
+            app.UseOwinApp(owinApp => {
+                owinApp.Use<DriverOwinMiddleware>();
+
+                //ODataConfig
+                owinApp.Map("/odata", owinInnerApp => {
+                    var config = new HttpConfiguration();
+                    config.MapHttpAttributeRoutes();
+                    owinInnerApp.UseWebApi(config);
+                });
+            });
         }
     }
 }
