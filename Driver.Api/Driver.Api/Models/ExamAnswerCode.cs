@@ -2,15 +2,12 @@
 
 namespace Driver.Api.Models
 {
-    public partial class DriverContext : DbContext
+    public class ExamAnswerCode
     {
-        public class ExamAnswerCode
-        {
-            public int AnswerNumber { get; set; }
-            public int ExamCode { get; set; }
-            public int ExamQuestionId { get; set; }
-            public int QuestionId { get; set; }
-            public int AnswerId { get; set; }
-        }
+        public int AnswerNumber { get; set; }
+        public int ExamCode { get; set; }
+        public int ExamQuestionId { get; set; }
+        public int QuestionId { get; set; }
+        public int AnswerId { get; set; }
     }
 }
