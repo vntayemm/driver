@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -41,10 +37,10 @@ namespace Driver.Api
             app.UseMvc();
 
             //Pipeline middleeware package
-            app.UseOwin(pipeline =>
-            {
-                pipeline(next => null);
-            });
+            //app.UseOwin(pipeline =>
+            //{
+            //    pipeline(next => null);
+            //});
         }
     }
 }

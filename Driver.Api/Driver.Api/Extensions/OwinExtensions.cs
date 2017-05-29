@@ -23,13 +23,13 @@ namespace Driver.Api.Extensions
             return aspNetCoreApp.UseOwin(setup => setup(next =>
             {
                 var owinAppBuilder = new AppBuilder();
-                var aspNetCoreLifetime = (IApplicationLifetime)aspNetCoreApp.ApplicationServices.GetService(typeof(IApplicationLifetime));
                 var owinAppProperties = new AppProperties(owinAppBuilder.Properties);
+                var aspNetCoreLifetime = (IApplicationLifetime)aspNetCoreApp.ApplicationServices.GetService(typeof(IApplicationLifetime));
 
                 owinAppProperties.OnAppDisposing = aspNetCoreLifetime?.ApplicationStopping ?? CancellationToken.None;
                 owinAppProperties.DefaultApp = next;
-                configuration(owinAppBuilder);
 
+                configuration(owinAppBuilder);
                 return owinAppBuilder.Build<Func<IDictionary<string, object>, Task>>();
             }));
         }
