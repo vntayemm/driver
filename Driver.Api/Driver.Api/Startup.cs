@@ -40,13 +40,12 @@ namespace Driver.Api
 
             app.UseMvc();
 
-            //Use OWIN middleware
+            app.UseMiddleware<DriverAspNetCoreMiddleware>();
+            app.UseMiddleware<DriverOwinMiddleware>();
+
             var config = new HttpConfiguration();
             config.MapHttpAttributeRoutes();
             app.UseWebApi(config);
-
-            app.UseMiddleware<DriverAspNetCoreMiddleware>();
-            //app.UseMiddleware<DriverAspNetCoreMiddleware>();
         }
     }
 }
