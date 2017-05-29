@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Driver.Api.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.OData.Builder;
+using Microsoft.AspNetCore.OData.Extensions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Driver.Api.Services;
-using Microsoft.AspNetCore.OData.Extensions;
 
 namespace Driver.Api
 {
@@ -32,7 +29,7 @@ namespace Driver.Api
             // Add framework services.
             services.AddMvc();
             services.AddCors();
-            services.AddOData<IDriverService>();
+            //services.AddOData<IQuestionService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
