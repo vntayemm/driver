@@ -43,7 +43,7 @@ namespace Driver.Api
             //Pipeline middleeware package
             app.UseOwin(pipeline =>
             {
-                pipeline(next => OwinHello);
+                pipeline(next => null);
             });
         }
     }
