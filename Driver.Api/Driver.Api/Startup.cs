@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using System.Web.Http;
 
 namespace Driver.Api
 {
@@ -28,7 +29,6 @@ namespace Driver.Api
             services.AddMvc();
             // Add Owin middleware
             // Configure Web API for self-host. 
-            var config = new HttpConfiguration();
 
         }
 
@@ -41,6 +41,10 @@ namespace Driver.Api
             app.UseMvc();
 
             //Use OWIN middleware
+            var config = new HttpConfiguration();
+            config.MapHttpAttributeRoutes();
+            app.UseWebApi(config);
+
             app.UseMiddleware<DriverAspNetCoreMiddleware>();
             //app.UseMiddleware<DriverAspNetCoreMiddleware>();
         }
