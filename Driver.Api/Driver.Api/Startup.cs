@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Driver.Api.Middleware;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -24,8 +25,11 @@ namespace Driver.Api
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-
             services.AddMvc();
+            // Add Owin middleware
+            // Configure Web API for self-host. 
+            var config = new HttpConfiguration();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,11 +40,9 @@ namespace Driver.Api
 
             app.UseMvc();
 
-            //Pipeline middleeware package
-            //app.UseOwin(pipeline =>
-            //{
-            //    pipeline(next => null);
-            //});
+            //Use OWIN middleware
+            app.UseMiddleware<DriverAspNetCoreMiddleware>();
+            //app.UseMiddleware<DriverAspNetCoreMiddleware>();
         }
     }
 }
