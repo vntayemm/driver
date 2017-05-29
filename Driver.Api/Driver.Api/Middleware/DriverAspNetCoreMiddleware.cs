@@ -5,17 +5,17 @@ namespace Driver.Api.Middleware
 {
     public class DriverAspNetCoreMiddleware
     {
-        private readonly RequestDelegate Next;
+        private readonly RequestDelegate _next;
 
         public DriverAspNetCoreMiddleware(RequestDelegate next)
         {
-            Next = next;
+            _next = next;
         }
 
         public async Task Invoke(HttpContext context)
         {
             // do what ever you want using context.Request & context.Response
-            await Next.Invoke(context);
+            await _next.Invoke(context);
         }
     }
 }

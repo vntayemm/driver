@@ -28,6 +28,7 @@ namespace Driver.Api
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
+
             services.AddMvc();
         }
 
@@ -38,6 +39,12 @@ namespace Driver.Api
             loggerFactory.AddDebug();
 
             app.UseMvc();
+
+            //Pipeline middleeware package
+            app.UseOwin(pipeline =>
+            {
+                pipeline(next => OwinHello);
+            });
         }
     }
 }
