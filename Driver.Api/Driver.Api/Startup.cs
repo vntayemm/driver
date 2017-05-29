@@ -57,6 +57,7 @@ namespace Driver.Api
                 owinApp.Map("/odata", owinInnerApp => {
                     var config = new HttpConfiguration();
                     config.MapHttpAttributeRoutes();
+
                     owinInnerApp.UseWebApi(config);
                 });
             });
