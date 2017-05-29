@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using System.Web.OData;
 
 namespace Driver.Api.Controllers
 {
@@ -11,6 +12,7 @@ namespace Driver.Api.Controllers
     {
         // GET api/values
         [HttpGet]
+        [EnableQuery]
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2", "value3" };
