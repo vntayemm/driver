@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Owin;
 using System.Web.Http;
+using Nancy.Owin;
 
 namespace Driver.Api
 {
@@ -29,10 +30,6 @@ namespace Driver.Api
         {
             // Add framework services.
             services.AddMvc();
-
-            // Add Owin middleware
-            // Configure Web API for self-host. 
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,26 +38,8 @@ namespace Driver.Api
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            app.UseMvc();
-
             //NancyOwin Middleware
-            //app.UseOwin(x => x.UseNance());
-
-            //Use Asp.Net Core Middleware
-            app.UseMiddleware<DriverAspNetCoreMiddleware>();
-
-            //Use OWIN Middleware
-            app.UseOwinApp(owinApp => {
-                owinApp.Use<DriverOwinMiddleware>();
-
-                //ODataConfig
-                owinApp.Map("/odata", owinInnerApp => {
-                    var config = new HttpConfiguration();
-                    config.MapHttpAttributeRoutes();
-
-                    owinInnerApp.UseWebApi(config);
-                });
-            });
+            app.UseOwin(x => x.UseNancy());
         }
     }
 }
