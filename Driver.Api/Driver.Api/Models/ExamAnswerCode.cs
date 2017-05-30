@@ -1,6 +1,4 @@
-﻿using System.Data.Entity;
-
-namespace Driver.Api.Models
+﻿namespace Driver.Api.Models
 {
     public class ExamAnswerCode
     {
