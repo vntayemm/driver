@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Data.Entity;
 
 namespace Driver.Api.Models
 {
