@@ -4,9 +4,9 @@ namespace Driver.Api.Modules
 {
     public class AnswersModule : NancyModule
     {
-        public AnswersModule()
+        public AnswersModule() : base("Answers")
         {
-            Get["/Answers"] = parameters =>
+            Get["/"] = parameters =>
             {
                 return new string[] { "value1", "value2", "value3" };
             };

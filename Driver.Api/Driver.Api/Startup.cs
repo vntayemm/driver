@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Nancy.Owin;
+using Nancy.TinyIoc;
 
 namespace Driver.Api
 {
