@@ -4,8 +4,12 @@ namespace Driver.Api.Models
 {
     public partial class DriverContext : DbContext
     {
-        public DriverContext()
-        { }
+        public DriverContext() : base("name=DefaultConnection")
+        {
+            if (!Database.Exists())
+            {
+            }
+        }
 
         //The subject
         public DbSet<Subject> Subjects { get; set; }
