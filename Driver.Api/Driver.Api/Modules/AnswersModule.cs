@@ -8,7 +8,7 @@ namespace Driver.Api.Modules
         {
             Get["/"] = parameters =>
             {
-                return new string[] { "value1", "value2", "value3" };
+                return new string[] { "value1", "value2", "value3", "value4" };
             };
         }
     }

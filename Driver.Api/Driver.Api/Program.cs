@@ -10,9 +10,10 @@ namespace Driver.Api
         {
             var host = new WebHostBuilder()
                 .UseKestrel()
-                .use
                 .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseIISIntegration()
                 .UseStartup<Startup>()
+                .UseApplicationInsights()
                 .Build();
 
             host.Run();

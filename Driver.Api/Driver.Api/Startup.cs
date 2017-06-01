@@ -1,4 +1,5 @@
 ﻿using Driver.Api.Models;
+using Driver.Api.Modules;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -28,23 +29,22 @@ namespace Driver.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddDbContext<Models.DriverContext>(opt => opt.use);
-
             services.Configure<HttpConfiguration>(config => {
+                var server = new HttpServer(config);
                 config.Filter().Expand().Select().OrderBy().MaxTop(null).Count();
-                config.MapHttpAttributeRoutes();
-                config.MapRestierRoute<EntityFrameworkApi<DriverContext>>("odata", "", null);
+                config.MapRestierRoute<EntityFrameworkApi<DriverContext>>("odata", null, new RestierBatchHandler(server));
             });
         }
 
-        public void ConfigureAsync(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseOwin(x => x.UseNancy(op => op.Bootstrapper = new Bootstrapper()));
 
-            app.UseOwin(x => x.UseNancy(op => { op.Bootstrapper = new Bootstrapper(); }));
+            
         }
     }
 }
