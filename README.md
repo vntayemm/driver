@@ -1,4 +1,8 @@
 Web lastest platform
+https://docs.microsoft.com/en-us/aspnet/core/client-side/yeoman
+npm install -g yo bower
+npm install -g generator-aspnet
+
 
 //environment
 npm install -g npm-windows-upgrade

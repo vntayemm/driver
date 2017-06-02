@@ -14,6 +14,7 @@
     <None Remove="Services\**" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="DatabaseModels\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
   <ItemGroup>
