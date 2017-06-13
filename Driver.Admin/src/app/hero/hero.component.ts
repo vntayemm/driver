@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Hero } from 'app/hero/hero.model';
 
 @Component({
@@ -11,6 +12,7 @@ export class HeroComponent implements OnInit {
     id: 1,
     name: 'Windstorm'
   }
+  heros: Hero[] = HEROES;
 
   constructor() { 
 
