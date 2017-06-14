@@ -8,7 +8,7 @@ import { Hero } from 'app/hero/hero.model';
   styleUrls: ['./hero.component.css']
 })
 export class HeroComponent implements OnInit {
-  hero: Hero;
+  selectedHero: Hero;
   heros: Hero[] = HEROES;
 
   constructor() { 
@@ -19,7 +19,7 @@ export class HeroComponent implements OnInit {
   }
 
   onSelect(hero: Hero): void {
-    this.hero = hero;
+    this.selectedHero = hero;
   }
 }
 
