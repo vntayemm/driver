@@ -43,3 +43,6 @@ npm install -g gulp-cli
 ## eslint is utility for java script
 http://eslint.org/
 npm install eslint --save-dev
+npm install --save-dev eslint eslint-config-defaults
+npm install eslint-plugin-react --save-dev
+npm install eslint-plugin-babel --save-dev
