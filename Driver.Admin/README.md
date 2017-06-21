@@ -46,3 +46,5 @@ npm install eslint --save-dev
 npm install --save-dev eslint eslint-config-defaults
 npm install eslint-plugin-react --save-dev
 npm install eslint babel-eslint --save-dev
+npm install gulp-eslint
+npm install gulp-eslint
