@@ -30,15 +30,19 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## App starting with ng-cli
 https://github.com/angular/angular-cli
-npm install -g @angular/cli
+npm i -g @angular/cli
+ng new <projectName>
 
 ## bower is a package manager for web
 https://bower.io/
-npm install -g power
+npm i -g power
+bower init
 
 ## gulp is task running toolkit for web develop
 http://gulpjs.com/
-npm install -g gulp-cli
+npm i -g gulp-cli
+npm i -g -D gulp
+NULL gulpfile.js
 
 ## eslint is utility for java script
 http://eslint.org/
