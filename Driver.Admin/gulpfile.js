@@ -1,19 +1,23 @@
+'use strict';
+
 var gulp = require('gulp');
-var pug = require('gulp-pug');
-var less = require('gulp-less');
-var minifyCSS = require('gulp-csso');
+var fs = require('fs-extra');
 
-gulp.task('html', function(){
-  return gulp.src('client/templates/*.pug')
-    .pipe(pug())
-    .pipe(gulp.dest('build/html'))
+/**
+ *  This will load all js or coffee files in the gulp directory
+ *  in order to load all gulp tasks
+ */
+fs.readdirSync('./gulp').filter(function (file) {
+  return (/\.(js|coffee)$/i).test(file);
+}).map(function (file) {
+  require('./gulp/' + file);
 });
 
-gulp.task('css', function(){
-  return gulp.src('client/templates/*.less')
-    .pipe(less())
-    .pipe(minifyCSS())
-    .pipe(gulp.dest('build/css'))
-});
 
-gulp.task('default', [ 'html', 'css' ]);
+/**
+ *  Default task clean temporaries directories and launch the
+ *  main optimization build task
+ */
+gulp.task('default', ['clean'], function () {
+  gulp.start('build');
+});
