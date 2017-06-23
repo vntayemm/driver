@@ -5,13 +5,11 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { HeroComponent } from './hero/hero.component';
-import { App404Component } from './404/404.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroComponent,
-    App404Component
   ],
   imports: [
     BrowserModule,
