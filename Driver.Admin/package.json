@@ -3,13 +3,13 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve webpack",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
-    "postinstall": "bower install"
+    "ng": "gulp",
+    "start": "gulp serve",
+    "build": "gulp",
+    "test": "gulp test",
+    "lint": "gulp lint",
+    "e2e": "gulp e2e",
+    "postinstall": "bower install typings install"
   },
   "private": true,
   "dependencies": {
