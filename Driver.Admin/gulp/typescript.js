@@ -4,7 +4,7 @@ var gulp = require('gulp');
 var del = require('del');
 var path = require('path');
 var conf = require('./conf');
-const ts = require('gulp-typescript');
+var ts = require('gulp-typescript');
 var sourcemaps = require('gulp-sourcemaps');
 var tsProject = ts.createProject('tsconfig.json');
 var tslint = require('gulp-tslint');
@@ -14,7 +14,7 @@ var tslint = require('gulp-tslint');
  * Lint all custom TypeScript files.
  */
 gulp.task('tslint', () => {
-    return gulp.src(path.json(conf.paths.src, '/**/*.ts'))
+    return gulp.src(path.join(conf.paths.src, '/**/*.ts'),)
         .pipe(tslint({
             formatter: 'prose'
         }))
@@ -25,12 +25,12 @@ gulp.task('tslint', () => {
  * Compile TypeScript sources and create sourcemaps in build directory.
  */
 gulp.task('compile', ['tslint'], () => {
-    let tsResult = gulp.src(path.json(conf.paths.src, '/**/*.ts'))
+    let tsResult = gulp.src(path.join(conf.paths.src, '/**/*.ts'),)
         .pipe(sourcemaps.init())
         .pipe(ts(tsProject));
     return tsResult.js
         .pipe(sourcemaps.write('.', {sourceRoot: conf.paths.src}))
-        .pipe(gulp.dest('build'));
+        .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve/app/')));
 });
 
 /**
@@ -40,29 +40,12 @@ gulp.task('resources', () => {
     return gulp.src([
         path.join(conf.paths.src, '!**/*.ts')    
     ])
-    .pipe(gulp.dest('build'));
+    .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve/app/')));
 });
-
-/**
- * Copy all required libraries into build directory.
- */
-gulp.task('libs', () => {
-    return gulp.src([
-            'core-js/client/shim.min.js',
-            'systemjs/dist/system-polyfills.js',
-            'systemjs/dist/system.src.js',
-            'reflect-metadata/Reflect.js',
-            'rxjs/**',
-            'zone.js/dist/**',
-            '@angular/**'
-        ], {cwd: 'node_modules/**'}) /* Glob required here. */
-        .pipe(gulp.dest('build/lib'));
-});
-
 
 /**
  * Build the project.
  */
-gulp.task('build', ['compile', 'resources', 'libs'], () => {
+gulp.task('build', ['compile', 'resources'], () => {
     console.log('Building the project ...');
 });
