@@ -27,10 +27,10 @@ gulp.task('tslint', () => {
 gulp.task('compile', ['tslint'], () => {
     let tsResult = gulp.src(path.join(conf.paths.src, '/**/*.ts'),)
         .pipe(sourcemaps.init())
-        .pipe(ts(tsProject));
+        .pipe(tsProject());
     return tsResult.js
         .pipe(sourcemaps.write('.', {sourceRoot: conf.paths.src}))
-        .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve/app/')));
+        .pipe(gulp.dest(path.join(conf.paths.dist, '/serve/app/')));
 });
 
 /**
@@ -40,7 +40,7 @@ gulp.task('resources', () => {
     return gulp.src([
         path.join(conf.paths.src, '!**/*.ts')    
     ])
-    .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve/app/')));
+    .pipe(gulp.dest(path.join(conf.paths.dist, '/serve/app/')));
 });
 
 /**
