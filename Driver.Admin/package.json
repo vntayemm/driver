@@ -9,7 +9,7 @@
     "test": "gulp test",
     "lint": "gulp lint",
     "e2e": "gulp e2e",
-    "postinstall": "bower install typings install"
+    "postinstall": ""
   },
   "private": true,
   "dependencies": {

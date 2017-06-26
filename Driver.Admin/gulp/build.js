@@ -35,6 +35,7 @@ gulp.task('html', ['inject', 'partials'], function () {
 
   var htmlFilter = $.filter('*.html', { restore: true, dot:true});
   var jsFilter = $.filter('**/*.js', { restore: true, dot:true});
+  var tsFilter = $.filter('**/*.ts', { restore: true, dot:true});
   var cssFilter = $.filter('**/*.css', { restore: true, dot:true});
   var assets;
 
@@ -42,11 +43,13 @@ gulp.task('html', ['inject', 'partials'], function () {
     .pipe($.inject(partialsInjectFile, partialsInjectOptions))
     .pipe($.rev())
     .pipe(jsFilter)
+    .pipe(tsFilter)
     .pipe($.sourcemaps.init())
     .pipe($.ngAnnotate())
     .pipe($.uglify({ preserveComments: $.uglifySaveLicense })).on('error', conf.errorHandler('Uglify'))
     .pipe($.sourcemaps.write('maps'))
     .pipe(jsFilter.restore)
+    .pipe(tsFilter.restore)
     .pipe(cssFilter)
     .pipe($.sourcemaps.init())
     .pipe($.replace('../../bower_components/bootstrap-sass/assets/fonts/bootstrap/', '../fonts/'))
@@ -82,7 +85,7 @@ gulp.task('other', ['copyVendorImages'], function () {
 
   return gulp.src([
     path.join(conf.paths.src, '/**/*'),
-    path.join('!' + conf.paths.src, '/**/*.{html,css,js,scss,md}'),
+    path.join('!' + conf.paths.src, '/**/*.{html,css,js,ts,scss,md}'),
     path.join(conf.paths.tmp, '/serve/**/assets/img/theme/vendor/**/*')
   ])
     .pipe(fileFilter)
