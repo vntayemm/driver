@@ -39,35 +39,37 @@ gulp.task('html', ['inject', 'partials'], function () {
   var cssFilter = $.filter('**/*.css', { restore: true, dot:true});
   var assets;
 
-  return gulp.src(path.join(conf.paths.tmp, '/serve/*.html'))
-    .pipe($.inject(partialsInjectFile, partialsInjectOptions))
-    .pipe($.rev())
-    .pipe(jsFilter)
-    .pipe(tsFilter)
-    .pipe($.sourcemaps.init())
-    .pipe($.ngAnnotate())
-    .pipe($.uglify({ preserveComments: $.uglifySaveLicense })).on('error', conf.errorHandler('Uglify'))
-    .pipe($.sourcemaps.write('maps'))
-    .pipe(jsFilter.restore)
-    .pipe(tsFilter.restore)
-    .pipe(cssFilter)
-    .pipe($.sourcemaps.init())
-    .pipe($.replace('../../bower_components/bootstrap-sass/assets/fonts/bootstrap/', '../fonts/'))
-    .pipe($.minifyCss({ processImport: false }))
-    .pipe($.sourcemaps.write('maps'))
-    .pipe(cssFilter.restore)
-    .pipe($.useref())
-    .pipe($.revReplace())
-    .pipe(htmlFilter)
-    .pipe($.minifyHtml({
-      empty: true,
-      spare: true,
-      quotes: true,
-      conditionals: true
-    }))
-    .pipe(htmlFilter.restore)
-    .pipe(gulp.dest(path.join(conf.paths.dist, '/')))
-    .pipe($.size({ title: path.join(conf.paths.dist, '/'), showFiles: true }));
+  return gulp.src(
+      path.join(conf.paths.tmp, '/serve/*.html')
+    )
+      .pipe($.inject(partialsInjectFile, partialsInjectOptions))
+      .pipe($.rev())
+      .pipe(jsFilter)
+      .pipe(tsFilter)
+      .pipe($.sourcemaps.init())
+      .pipe($.ngAnnotate())
+      .pipe($.uglify({ preserveComments: $.uglifySaveLicense })).on('error', conf.errorHandler('Uglify'))
+      .pipe($.sourcemaps.write('maps'))
+      .pipe(jsFilter.restore)
+      .pipe(tsFilter.restore)
+      .pipe(cssFilter)
+      .pipe($.sourcemaps.init())
+      .pipe($.replace('../../bower_components/bootstrap-sass/assets/fonts/bootstrap/', '../fonts/'))
+      .pipe($.minifyCss({ processImport: false }))
+      .pipe($.sourcemaps.write('maps'))
+      .pipe(cssFilter.restore)
+      .pipe($.useref())
+      .pipe($.revReplace())
+      .pipe(htmlFilter)
+      .pipe($.minifyHtml({
+        empty: true,
+        spare: true,
+        quotes: true,
+        conditionals: true
+      }))
+      .pipe(htmlFilter.restore)
+      .pipe(gulp.dest(path.join(conf.paths.dist, '/')))
+      .pipe($.size({ title: path.join(conf.paths.dist, '/'), showFiles: true }));
   });
 
 // Only applies for fonts from bower dependencies
