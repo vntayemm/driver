@@ -1,15 +1,13 @@
 'use strict';
 
-var path = require('path');
-var gulp = require('gulp');
-var conf = require('./conf');
+var gulp = require('gulp'),
+    path = require('path'),
+    conf = require('./conf');
 
-var browserSync = require('browser-sync');
-var browserSyncSpa = require('browser-sync-spa');
-
-var util = require('util');
-
-var proxyMiddleware = require('http-proxy-middleware');
+var browserSync = require('browser-sync'),
+    browserSyncSpa = require('browser-sync-spa'),
+    util = require('util'),
+    proxyMiddleware = require('http-proxy-middleware');
 
 function browserSyncInit(baseDir, browser) {
   browser = browser === undefined ? 'default' : browser;

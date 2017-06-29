@@ -1,8 +1,8 @@
 'use strict';
 
-var path = require('path');
-var gulp = require('gulp');
-var conf = require('./conf');
+var gulp = require('gulp'),
+    path = require('path'),
+    conf = require('./conf');
 
 var browserSync = require('browser-sync');
 

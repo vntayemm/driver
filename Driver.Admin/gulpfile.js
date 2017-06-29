@@ -1,7 +1,7 @@
 'use strict';
 
-var gulp = require('gulp');
-var fs = require('fs-extra');
+var gulp = require('gulp'),
+    fs = require('fs-extra');
 
 /**
  *  This will load all js or coffee files in the gulp directory

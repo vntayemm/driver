@@ -1,51 +1,16 @@
 'use strict';
 
-var gulp = require('gulp');
-var del = require('del');
-var path = require('path');
-var conf = require('./conf');
-var ts = require('gulp-typescript');
-var sourcemaps = require('gulp-sourcemaps');
-var tsProject = ts.createProject('tsconfig.json');
-var tslint = require('gulp-tslint');
+var gulp = require('gulp'),
+    path = require('path'),
+    conf = require('./conf');
 
+var typescript = require('gulp-typescript'),
+    tscConfig = require('./../tsconfig.json');
 
-/**
- * Lint all custom TypeScript files.
- */
-gulp.task('tslint', () => {
-    return gulp.src(path.join(conf.paths.src, '/**/*.ts'),)
-        .pipe(tslint({
-            formatter: 'prose'
-        }))
-        .pipe(tslint.report());
-});
-
-/**
- * Compile TypeScript sources and create sourcemaps in build directory.
- */
-gulp.task('compile', ['tslint'], () => {
-    let tsResult = gulp.src(path.join(conf.paths.src, '/**/*.ts'),)
-        .pipe(sourcemaps.init())
-        .pipe(tsProject());
-    return tsResult.js
-        .pipe(sourcemaps.write('.', {sourceRoot: conf.paths.src}))
-        .pipe(gulp.dest(path.join(conf.paths.dist, '/serve/app/')));
-});
-
-/**
- * Copy all resources that are not TypeScript files into build directory.
- */
-gulp.task('resources', () => {
-    return gulp.src([
-        path.join(conf.paths.src, '!**/*.ts')    
-    ])
-    .pipe(gulp.dest(path.join(conf.paths.dist, '/serve/app/')));
-});
-
-/**
- * Build the project.
- */
-gulp.task('build', ['compile', 'resources'], () => {
-    console.log('Building the project ...');
+//typescript to javascript
+gulp.task('typescript', ()=>{
+    return gulp
+        .src(path.join(conf.paths.src, '/**/*.ts'))
+        .pipe(typescript(tscConfig.compilerOptions))
+        .pipe(gulp.dest(path.join(conf.paths.dist, '/')));
 });
