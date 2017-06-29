@@ -4,7 +4,7 @@ var gulp = require('gulp'),
     path = require('path'),
     conf = require('./conf');
 
-gulp.task('css', ()=>{
+gulp.task('css', () => {
   return gulp
     .src([
         path.join(conf.paths.src, '/**/*.css'),

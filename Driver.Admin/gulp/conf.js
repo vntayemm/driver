@@ -32,10 +32,10 @@ exports.wiredep = {
 /**
  *  Common implementation for an error handler of a Gulp plugin
  */
-exports.errorHandler = function(title) {
+exports.errorHandler = (title) => {
   'use strict';
 
-  return function(err) {
+  return (err) => {
     gutil.log(gutil.colors.red('[' + title + ']'), err.toString());
     this.emit('end');
   };

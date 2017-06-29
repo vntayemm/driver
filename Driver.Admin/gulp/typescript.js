@@ -8,7 +8,7 @@ var typescript = require('gulp-typescript'),
     tscConfig = require('./../tsconfig.json');
 
 //typescript to javascript
-gulp.task('typescript', ()=>{
+gulp.task('typescript', () => {
     return gulp
         .src(path.join(conf.paths.src, '/**/*.ts'))
         .pipe(typescript(tscConfig.compilerOptions))

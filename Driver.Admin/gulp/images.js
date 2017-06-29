@@ -1,10 +1,10 @@
 'use strict';
 
-var path = require('path');
-var gulp = require('gulp');
-var conf = require('./conf');
+var gulp = require('gulp'),
+    path = require('path'),
+    conf = require('./conf');
 
-gulp.task('copyVendorImages', function () {
+gulp.task('copyVendorImages', () => {
   return gulp
     .src([
       path.join(conf.wiredep.directory, '**/ammap/dist/ammap/images/**/*'),

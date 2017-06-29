@@ -2,7 +2,7 @@
 
 var gulp = require('gulp');
 
-gulp.task('build', ()=>{
+gulp.task('build', () => {
     gulp.start('typescript');
     gulp.start('javascript');
     gulp.start('css');
