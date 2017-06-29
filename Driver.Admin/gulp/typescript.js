@@ -12,5 +12,5 @@ gulp.task('typescript', () => {
     return gulp
         .src(path.join(conf.paths.src, '/**/*.ts'))
         .pipe(typescript(tscConfig.compilerOptions))
-        .pipe(gulp.dest(path.join(conf.paths.dist, '/')));
+        .pipe(gulp.dest(path.join(conf.paths.dist, '/app')));
 });

@@ -7,5 +7,5 @@ var gulp = require('gulp'),
 gulp.task('styles', () => {
   return gulp
     .src(path.join(conf.paths.src, '/**/*.{css, scss, less}'))
-    .pipe(gulp.dest(path.join(conf.paths.dist, '/')));
+    .pipe(gulp.dest(path.join(conf.paths.dist, '/sass')));
 });
