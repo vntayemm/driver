@@ -8,6 +8,14 @@ exports.paths = {
     e2e: 'e2e'
 };
 
+exports.file = {
+    html: '/**/*.html',
+    styles: '/**/*.{css, scss, less}',
+    javascript: '**/*.js',
+    typescript: '/**/*.ts',
+    font: '**/*.{eot,svg,ttf,woff,woff2}'
+};
+
 exports.wiredep = {
     exclude: [/\/bootstrap\.js$/, /\/bootstrap-sass\/.*\.js/, /\/require\.js/],
     directory: 'bower_components'

@@ -6,6 +6,6 @@ var gulp = require('gulp'),
     
 gulp.task('html', () => {
     return gulp
-        .src(path.join(conf.paths.src, '/**/*.html'))
-        .pipe(gulp.dest(conf.paths.dist + '/'));
+        .src(path.join(conf.paths.src, conf.file.html))
+        .pipe(gulp.dest(conf.paths.dist + '/app'));
 });
