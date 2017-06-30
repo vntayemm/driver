@@ -1,11 +1,11 @@
 var gutil = require('gulp-util');
 
 exports.paths = {
-    src: 'src',
-    dist: 'dist',
-    devDist: 'devDist',
-    tmp: '.tmp',
-    e2e: 'e2e'
+    src: 'src/',
+    dist: 'dist/',
+    devDist: 'devDist/',
+    tmp: '.tmp/',
+    e2e: 'e2e/'
 };
 
 exports.file = {
@@ -13,7 +13,7 @@ exports.file = {
     styles: '/**/*.{css, scss, less}',
     javascript: '**/*.js',
     typescript: '/**/*.ts',
-    font: '**/*.{eot,svg,ttf,woff,woff2}'
+    fonts: '**/*.{eot,svg,ttf,woff,woff2}'
 };
 
 exports.wiredep = {

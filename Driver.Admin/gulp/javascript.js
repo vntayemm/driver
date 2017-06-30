@@ -7,5 +7,5 @@ var gulp = require('gulp'),
 gulp.task('javascript', () => {
     return gulp
         .src(path.join(conf.paths.src, conf.file.javascript))
-        .pipe(gulp.dest(path.join(conf.paths.dist, '/app')));
+        .pipe(gulp.dest(path.join(conf.paths.dist, 'app/')));
 });
