@@ -1,11 +1,7 @@
-'use strict';
-
 var gulp = require('gulp'),
-    conf = require('./conf');
+    del = require('del'),
+    config = require('./config');
 
-var $ = require('gulp-load-plugins')({
-        pattern: ['del']});
-
-gulp.task('clean', (done) => {
-    return $.del([conf.paths.dist, conf.paths.tmp]);
+gulp.task('clean', () => {
+    return del([config.dist])
 });

@@ -1,5 +1,3 @@
-'use strict';
-
 var gulp = require('gulp'),
     fs = require('fs-extra');
 
@@ -18,6 +16,6 @@ fs.readdirSync('./gulp').filter((file) => {
  *  Default task clean temporaries directories and launch the
  *  main optimization build task
  */
-gulp.task('default', ['clean'], () => {
-  gulp.start('build');
+gulp.task('default', () => {
+    console.log('gulp file started');
 });
