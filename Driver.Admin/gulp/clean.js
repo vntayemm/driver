@@ -3,5 +3,5 @@ var gulp = require('gulp'),
     config = require('./config');
 
 gulp.task('clean', () => {
-    return del([config.dist])
+    return del([config.global.dist, config.global.tmp]);
 });
