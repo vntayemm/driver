@@ -5,7 +5,7 @@ exports.global = {
     src: 'src/',
     dist: 'dist/',
     tmp: 'tmp/',
-    tmpApp: 'tmp/app',
+    tmpApp: 'tmp/app/',
     e2e: 'e2e/',
     test: 'src/test/'
 };

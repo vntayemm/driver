@@ -10,7 +10,7 @@ var util = require('gulp-util'),
 /* Initialize */
 var typingFiles = [config.global.src + config.project.file.typing],
     tsUnitFiles = [].concat(config.project.testFile.unit, config.project.testFile.helper),
-    tsFiles = [].concat(config.project.ts, tsUnitFiles);
+    tsFiles = [].concat(config.project.file.ts, tsUnitFiles);
 
 /* Compile typescripts */
 gulp.task('ts', ['clean-ts'], () => {
