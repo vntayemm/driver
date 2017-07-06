@@ -1,13 +1,22 @@
 var gutil = require('gulp-util');
 
 exports.global = {
-    app: 'src/app/',
     src: 'src/',
+    app: 'src/app/',
     dist: 'dist/',
     tmp: 'tmp/',
     tmpApp: 'tmp/app/',
     e2e: 'e2e/',
-    test: 'src/test/'
+    test: 'src/test/',
+    helper: 'src/test/test-helpers/',
+    format: {
+        html: '**/*.html',
+        style: '**/*.{css, scss, less}',
+        js: '**/*.js',
+        ts: '**/!(*.spec)+(.ts)',
+        typing: 'manual_typings/**/*.d.ts',
+        font: '**/*.{eot,svg,ttf,woff,woff2}',
+        spec: '**/*.spec.ts'}
 };
 
 exports.project = {
@@ -19,21 +28,9 @@ exports.project = {
         styles: global.dist + 'assets/',
         fonts: global.dist + 'fonts/'},
     file: {
-        html: global.src + '**/*.html',
-        style: global.app + '**/*.{css, scss, less}',
-        js: '**/*.js',
-        ts: global.app + '**/!(*.spec)+(.ts)',
-        typing: global.src + 'manual_typings/**/*.d.ts',
-        font: global.app + '**/*.{eot,svg,ttf,woff,woff2}',
         index: global.src + 'index.html',
         systemjs: global.src + 'systemjs.conf.js',
-        maincss: global.src + 'styles.css'},
-    testFile: {
-        ts: global.app + '**/*.spec.ts',
-        unit: [global.app + '**/*.spec.ts'],
-        e2e: [global.e2e + '**/*.ts'],
-        helper: [global.test + 'test-helpers/**/*.ts']
-    }
+        maincss: global.src + 'styles.css'}
 };
 
 exports.errorHandler = (title) => {
