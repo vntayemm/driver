@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
-    fs = require('fs-extra');
+    fs = require('fs-extra'),
+    util = require('gulp-util');
 
 /**
  *  This will load all js or coffee files in the gulp directory
@@ -16,6 +17,8 @@ fs.readdirSync('./gulp').filter((file) => {
  *  Default task clean temporaries directories and launch the
  *  main optimization build task
  */
-gulp.task('default', () => {
-    console.log('gulp file started');
+gulp.task('default', [], () => {
+    return util.log('gulp file started');
+}).on('stop', () => {
+    process.exit();
 });

@@ -14,15 +14,12 @@ var typingFiles = [config.global.src + config.global.format.typing],
 
 gulp.task('test',() => {
     console.log(config.global.src + config.global.format.typing);
-    typingFiles.forEach(function(f) {
-        console.log(f.path);
-    }, this);
 });
  
 gulp.task('ts', ['clean-ts'], () => {
     return compileTs(tsFiles);
 });
-/**
+
 gulp.task('ts', ['clean-ts'], () => {
     return compileTs(tsFiles);
 });
@@ -46,7 +43,6 @@ gulp.task('tslint-app', () => {
 gulp.task('tslint-unit', () => {
     return lintTs(tsUnitFiles);
 });
- */
 
 function lintTs(files) {
     return gulp
@@ -85,13 +81,10 @@ function compileTs(files, watchMode) {
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(config.global.tmp));
 }
-/**
+
 gulp.watch('wacth-ts', () => {
     return gulp.watch(tsFiles, (file) => {
         util.log('compiling' + file.path + '---');
         return compileTs(file.path, true);
     })
 });
-
-
- */
