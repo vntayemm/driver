@@ -1,5 +1,3 @@
-'use strict';
-
 var gutil = require('gulp-util');
 
 exports.global = {
@@ -30,6 +28,7 @@ exports.project = {
         styles: global.dist + 'assets/',
         fonts: global.dist + 'fonts/'},
     file: {
+        main: global.src + 'main.ts',
         index: global.src + 'index.html',
         systemjs: global.src + 'systemjs.conf.js',
         maincss: global.src + 'styles.css'}
