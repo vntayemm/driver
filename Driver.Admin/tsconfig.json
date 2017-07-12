@@ -5,6 +5,8 @@
     "baseUrl": "src",
     "sourceMap": true,
     "declaration": false,
+    "noEmitHelpers": false,
+    "noImplicitAny": true,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -15,6 +17,9 @@
     "lib": [
       "es2016",
       "dom"
+    ],
+    "files": [
+      "src/main.ts"
     ]
   }
 }
