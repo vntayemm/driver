@@ -4,6 +4,7 @@ var gulp = require('gulp'),
 
 var browserify = require('browserify'),
     source = require('vinyl-source-stream'),
+    watchify = require('watchify'),
     tsify = require('tsify');
 
 var watchedBrowserify = watchify(browserify({
@@ -20,9 +21,9 @@ gulp.task('copy-html', () => {
         .pipe(gulp.dest(config.global.dist));
 });
 
-gulp.task('html', ['copy-html'], function () {
+gulp.task('html', ['copy-html'], _ => {
     return watchedBrowserify
-    .bundle()   
-    .pipe(source('bundle.js'))
-    .pipe(gulp.dest(config.global.dist));
+        .bundle()   
+        .pipe(source('bundle.js'))
+        .pipe(gulp.dest(config.global.dist));
 });

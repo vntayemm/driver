@@ -7,9 +7,9 @@ var gulp = require('gulp'),
  *  in order to load all gulp tasks
  */
 fs.readdirSync('./gulp').filter((file) => {
-  return (/\.(js|coffee)$/i).test(file);
+    return (/\.(js|coffee)$/i).test(file);
 }).map((file) => {
-  require('./gulp/' + file);
+    require('./gulp/' + file);
 });
 
 
