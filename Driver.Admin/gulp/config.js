@@ -21,17 +21,17 @@ exports.global = {
 
 exports.project = {
     src: {
-        styles: global.src + 'assets/styles/',
-        images: global.src + 'assets/images/',
-        fonts: global.src + 'assets/fonts/'},
+        styles: 'assets/styles/',
+        images: 'assets/images/',
+        fonts: 'assets/fonts/'},
     dist: {
-        styles: global.dist + 'assets/',
-        fonts: global.dist + 'fonts/'},
+        styles: 'assets/',
+        fonts: 'fonts/'},
     file: {
-        main: global.src + 'main.ts',
-        index: global.src + 'index.html',
-        systemjs: global.src + 'systemjs.conf.js',
-        maincss: global.src + 'styles.css'}
+        main: 'main.ts',
+        index: 'index.html',
+        systemjs: 'systemjs.conf.js',
+        maincss: 'styles.css'}
 };
 
 exports.errorHandler = (title) => {
