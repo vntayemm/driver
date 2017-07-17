@@ -29,3 +29,43 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## npm cache verify
 ##  npm install @angular/common@next @angular/compiler@next @angular/compiler-cli@next @angular/core@next @angular/forms@next @angular/http@next @angular/platform-browser@next @angular/platform-browser-dynamic@next @angular/platform-server@next @angular/router@next @angular/animations@next --save
+
+
+angular2-typescript-gulp
+|   .gitignore
+|   bs-config.json  -> BrowserSync configuration
+|   gulpfile.ts     -> Gulp in TypeScript
+|   package.json    -> npm configuration
+|   tsconfig.json   -> TypeScript configuration
+|   typings.json    -> TypeScript typings definitions
+|   tslint.json     -> tslint configuration
+|
+\---src
+│   │   index.html                 -> Starting point for the application
+│   │   systemjs.config.js         -> SystemJS configuration
+│   │
+│   \---app                       -> Application modules
+│       │   app.component.ts          -> Main application component
+│       │   app.html              -> Main application template 
+│       │   app.module.ts         -> Application module definition       
+│       │   app.routing.ts        -> Routing configuration      
+│       │   main.ts               -> Application bootstrap   
+│       │
+│       \---about 
+│       │   └───components
+│       │           about.components.ts
+│       │           about.html
+│       │
+│       \---todo
+│           ├───components
+│           │       task-list.component.ts
+│           │       task-list.css
+│           │       task-list.html
+│           │       task.component.ts
+│           │       task.html
+│           │
+│           \---models
+│           │       task.ts
+│           │
+│           \---services
+│                   task-service.ts
