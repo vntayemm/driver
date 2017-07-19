@@ -11,10 +11,10 @@ export class BaFileUploader {
   @Output() onFileUploadCompleted = new EventEmitter<any>();
   @Input() defaultValue: string = '';
 
-  @ViewChild('fileUpload') public _fileUpload: ElementRef;
-  @ViewChild('inputText') public _inputText: ElementRef;
+  @ViewChild('fileUpload') _fileUpload: ElementRef;
+  @ViewChild('inputText') _inputText: ElementRef;
 
-  public uploadFileInProgress: boolean;
+  uploadFileInProgress: boolean;
   constructor(private renderer: Renderer) { 
   }
 
@@ -24,10 +24,11 @@ export class BaFileUploader {
   }
 
   beforeFileUpload(uploadingFile): void {
-    let files = this._fileUpload.nativeElement.files;
+    const files = this._fileUpload.nativeElement.files;
     if (files.length) {
       const file = files[0];
-      this._onChangeFileSelect(files[0])
+      this._onChangeFileSelect(files[0]);
+
       if (!this._canFleUploadOnServer()) {
         uploadingFile.setAbort();
       } else {
@@ -37,7 +38,7 @@ export class BaFileUploader {
   }
 
   _onChangeFileSelect(file) {
-    this._inputText.nativeElement.value = file.name
+    this._inputText.nativeElement.value = file.name;
   }
 
   _onFileUpload(data): void {

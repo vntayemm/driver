@@ -18,7 +18,7 @@ import { layoutPaths } from './theme/theme.constants';
       <div class="additional-bg"></div>
       <router-outlet></router-outlet>
     </main>
-  `
+  `,
 })
 export class App {
 
@@ -39,7 +39,7 @@ export class App {
     });
   }
 
-  public ngAfterViewInit(): void {
+  ngAfterViewInit(): void {
     // hide spinner once all loaders are completed
     BaThemePreloader.load().then((values) => {
       this._spinner.hide();
