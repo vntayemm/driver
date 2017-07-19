@@ -1,15 +1,15 @@
-import { Injectable } from '@angular/core';
-import { BaThemeConfigProvider, colorHelper } from '../../../theme';
+import {Injectable} from '@angular/core';
+import {BaThemeConfigProvider, colorHelper} from '../../../theme';
 
 @Injectable()
 export class TrafficChartService {
 
-  constructor(private _baConfig: BaThemeConfigProvider) {
+  constructor(private _baConfig:BaThemeConfigProvider) {
   }
 
 
   getData() {
-    const dashboardColors = this._baConfig.get().colors.dashboard;
+    let dashboardColors = this._baConfig.get().colors.dashboard;
     return [
       {
         value: 2000,

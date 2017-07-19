@@ -1,24 +1,24 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
-import { FeedService } from './feed.service';
+import {FeedService} from './feed.service';
 
 @Component({
   selector: 'feed',
   templateUrl: './feed.html',
-  styleUrls: ['./feed.scss'],
+  styleUrls: ['./feed.scss']
 })
 export class Feed {
 
-  feed: Object[];
+  public feed:Array<Object>;
 
-  constructor(private _feedService: FeedService) {
+  constructor(private _feedService:FeedService) {
   }
 
   ngOnInit() {
     this._loadFeed();
   }
 
-  expandMessage (message) {
+  expandMessage (message){
     message.expanded = !message.expanded;
   }
 
