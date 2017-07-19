@@ -1,15 +1,9 @@
 import { Routes, RouterModule } from '@angular/router';
+import { ModuleWithProviders } from '@angular/core';
 
-import { HomeRoutes } from './home/index';
-import { TodolistRoutes } from './todolist/index';
-
-const appRoutes: Routes = [
-    ...HomeRoutes,
-    ...TodolistRoutes
+export const routes: Routes = [
+  { path: '', redirectTo: 'pages', pathMatch: 'full' },
+  { path: '**', redirectTo: 'pages/dashboard' }
 ];
 
-export const appRoutingProviders: any[] = [
-
-];
-
-export const routing = RouterModule.forRoot(appRoutes);
+export const routing: ModuleWithProviders = RouterModule.forRoot(routes, { useHash: true });

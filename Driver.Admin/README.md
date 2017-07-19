@@ -1,118 +1,68 @@
-# Angular Starter
+[![Build Status](https://travis-ci.org/akveo/ng2-admin.svg?branch=master)](https://travis-ci.org/akveo/ng2-admin)
+[![Join the chat at https://gitter.im/ng2-admin/Lobby](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ng2-admin/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Dependency Status](https://david-dm.org/akveo/ng2-admin/status.svg)](https://david-dm.org/akveo/ng2-admin)
 
-[![Build Status](https://travis-ci.org/antonybudianto/angular-starter.svg?branch=master)](https://travis-ci.org/antonybudianto/angular-starter)
-[![codecov](https://codecov.io/gh/antonybudianto/angular-starter/branch/master/graph/badge.svg)](https://codecov.io/gh/antonybudianto/angular-starter)
-[![Dependency Status](https://david-dm.org/antonybudianto/angular-starter.svg)](https://david-dm.org/antonybudianto/angular-starter)
-[![devDependency Status](https://david-dm.org/antonybudianto/angular-starter/dev-status.svg)](https://david-dm.org/antonybudianto/angular-starter#info=devDependencies)
+# Admin panel framework based on Angular, Bootstrap 4 and Angular CLI
 
-> Live Production Build [Demo](https://antonybudianto.github.io/angular-starter/)
+Admin template made with :heart:  by [Akveo team](http://akveo.com/). Follow us on [Twitter](https://twitter.com/akveo_inc) to get the latest news about this template first!
 
-> [Angular Webpack Starter](https://github.com/antonybudianto/angular-webpack-starter) is out! Featuring [AoT compilation](https://angular.io/docs/ts/latest/cookbook/aot-compiler.html), [Lazy loaded module](https://angular.io/docs/ts/latest/api/router/index/Routes-type-alias.html#!#sts=Lazy%20Loading), [Tree-shaking](https://medium.com/@Rich_Harris/tree-shaking-versus-dead-code-elimination-d3765df85c80#.103r6vl29) with [Webpack 2](https://webpack.github.io/docs/roadmap.html#2)
+### Demo
 
-## Introduction
-Welcome to Angular Starter!
-This starter contains almost everything you need to start developing [Angular 2](https://angular.io/).
+<a target="_blank" href="http://akveo.com/ng2-admin/"><img src="http://i.imgur.com/QK9AzHj.jpg" width="600" alt="Sky Blue"/></a>
 
-### Why choose this starter?
-- Extensible via [ngstarter extensions](https://github.com/ngstarter)
-- Complete workflow from serve, lint, unit test, e2e test, to bundling
-- Support file-based and strong-typed [Environment Variables](https://github.com/antonybudianto/angular-starter/wiki/Environment-Variables)
-- 100% code coverage
-- 100% [CI/CD](https://github.com/antonybudianto/angular-starter/wiki/Continuous-Integration) pipeline ready
-- No global package installation
-- No module bundler coupling
+<a target="_blank" href="http://akveo.com/ng2-admin/">Live Demo</a>
 
-### What's included?
-* [npm](https://www.npmjs.com/) for package manager
-* [TypeScript](http://www.typescriptlang.org/) for the base language
-  * with [Typings](https://github.com/typings/typings) for TypeScript definition manager
-* [Gulp](http://gulpjs.com/) for workflow (from *serve*, *watch*, *compile*, *test* to *build*)
-* [Browsersync](https://www.browsersync.io/) for development server & reload capability
-* [SystemJS](https://github.com/systemjs/systemjs) for module loader
-* [Codelyzer](https://github.com/mgechev/codelyzer) for static code analyzer
-* [Karma](http://karma-runner.github.io/) for test-runner
-* [Jasmine](http://jasmine.github.io/) for test framework
-* [Istanbul](https://github.com/gotwarlost/istanbul) for test coverage
-  * with [Remap Istanbul](https://github.com/SitePen/remap-istanbul) for remapping Javascript to TypeScript coverage
-* [SystemJS Builder](https://github.com/systemjs/builder) or [Webpack](https://webpack.github.io/) for module bundling in production
+## Angular 1.x version
+Here you can find Angular 1.x based version: [Blur Admin](http://akveo.github.io/blur-admin/)
+ 
+## Documentation
+Installation, customization and other useful articles: https://akveo.github.io/ng2-admin/
 
-Please visit the [wiki](https://github.com/antonybudianto/angular2-starter/wiki) for more details.
+## Based on
+Angular 2+, Angular CLI, Bootstrap 4, and lots of awesome modules and plugins
 
-## Prerequisites
-You need to have [Node.js and npm](https://nodejs.org/en/)
-- Support Node v6.9 - latest
-- Support npm v3 - latest
+## ngx-admin-next
+The next major release is under development in https://github.com/akveo/ng2-admin/tree/ngx-admin branch.
 
-[Global Gulp CLI](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md) is not required, since you can map them to npm scripts, but a nice to have for development purpose.
+## BrowserStack
+This project runs its tests on multiple desktop and mobile browsers using [BrowserStack](http://www.browserstack.com).
 
-## Installation
-Download the starter from [releases page](https://github.com/antonybudianto/angular-starter/releases)
+<img src="https://cloud.githubusercontent.com/assets/131406/22254249/534d889e-e254-11e6-8427-a759fb23b7bd.png" height="40" />
 
-Go to the starter directory and install the packages:
-```bash
-npm install
-```
+## How can I support developers?
+- Star our GitHub repo :star:
+- Create pull requests, submit bugs, suggest new features or documentation updates :wrench:
+- Follow us on [Twitter](https://twitter.com/akveo_inc) :feet:
+- Like our page on [Facebook](https://www.facebook.com/akveo/) :thumbsup:
 
-## Start
-Let's start up the server, run:
-```bash
-npm start
-```
+## Can I hire you guys?
+Yes!  Visit [our homepage](http://akveo.com/) or simply leave us a message to [contact@akveo.com](mailto:contact@akveo.com). We will be happy to work with you!
 
-and done! The browser will popup and you can start trying Angular!
-Every changes to the file will refresh the browser automatically
-and it'll also compile your changed TypeScripts files to Javascript files.
-
-## Testing
-This starter comes with testing gulp workflow
-
-### Unit testing
-Just run
-```bash
-npm test
-```
-and it'll compile all TypeScript files, start Karma, then remap Istanbul coverage so that it shows TypeScript coverage, not the transpiled JavaScript coverage.
-
-![Coverage result](http://s33.postimg.org/w7m9ckdkf/Screen_Shot_2016_06_04_at_8_15_53_AM.png)
-
-### E2E testing
-Firstly start the server:
-```bash
-npm start
-```
-To begin testing, run:
-```bash
-npm run e2e
-```
-and it'll compile all E2E spec files in `/src/test/e2e/*.spec.ts`, boot up Selenium server then launches Chrome browser.
-
-## Production
-> All build tasks will run the `gulp test`, the bundle will only be created if the test passed.
-
-> For more details, visit [Continuous Integration  wiki](https://github.com/antonybudianto/angular-starter/wiki/Continuous-Integration)
-
-You can create production build by running:
-```bash
-npm run build
-```
-or you can create production build and then serve it using Browsersync by running:
-```bash
-npm run serve-build
-```
-The starter defaults to bundle using [SystemJS Builder extension](https://github.com/ngstarter/systemjs-extension).
-There is [Webpack extension](https://github.com/ngstarter/webpack-extension) available too, feel free to swap it as you like.
-
-## Extension
-You can extend this starter with many extensions built by the community. Browse the extensions [here](https://github.com/ngstarter)
-
-## Contributing
-Feel free to submit a PR if there are any issues or new features, please read [this](https://github.com/antonybudianto/angular-starter/wiki/Contributing) before
-
-## Special thanks
-* For all contributors who have helped this starter improvement
-* John Papa for his awesome [angular-styleguide](https://github.com/johnpapa/angular-styleguide) and [Tour of Heroes](https://github.com/johnpapa/angular2-tour-of-heroes)
-* Julie Ralph for her [ng2-test-seed](https://github.com/juliemr/ng2-test-seed) which helped me a lot to get started with testing feature
-* Minko Gechev for his [angular2-seed](https://github.com/mgechev/angular2-seed) and [angular2-ngc-rollup-build](https://github.com/mgechev/angular2-ngc-rollup-build) which helped a lot
+## Features
+* TypeScript
+* Webpack
+* Responsive layout
+* High resolution
+* Bootstrap 4 CSS Framework
+* Sass
+* Angular
+* jQuery
+* Charts (Chartist, Chart.js)
+* Maps (Google, Leaflet, amMap)
+* and many more!
 
 ## License
-MIT
+[MIT](LICENSE.txt) license.
+
+## Special thanks to our awesome contributors!
+
+[<img alt="nnixaa" src="https://avatars0.githubusercontent.com/u/230527?v=3&s=60" width="60">](https://github.com/nnixaa)[<img alt="lexzhukov" src="https://avatars0.githubusercontent.com/u/12192373?v=3&s=60" width="60">](https://github.com/lexzhukov)[<img alt="smartapant" src="https://avatars3.githubusercontent.com/u/3674348?v=3&s=60" width="60">](https://github.com/smartapant)[<img alt="Tibing" src="https://avatars2.githubusercontent.com/u/17410089?v=3&s=60" width="60">](https://github.com/Tibing)[<img alt="ESadouski" src="https://avatars3.githubusercontent.com/u/9255839?v=3&s=60" width="60">](https://github.com/ESadouski)[<img alt="hryb" src="https://avatars3.githubusercontent.com/u/24896429?v=3&s=60" width="60">](https://github.com/hryb)[<img alt="AlbertXingZhang" src="https://avatars3.githubusercontent.com/u/12808025?v=3&s=60" width="60">](https://github.com/AlbertXingZhang)[<img alt="iamdavidfrancis" src="https://avatars2.githubusercontent.com/u/539365?v=3&s=60" width="60">](https://github.com/iamdavidfrancis)[<img alt="Gelio" src="https://avatars3.githubusercontent.com/u/889383?v=3&s=60" width="60">](https://github.com/Gelio)[<img alt="ramsunvtech" src="https://avatars1.githubusercontent.com/u/1652629?v=3&s=60" width="60">](https://github.com/ramsunvtech)[<img alt="GRoguelon" src="https://avatars2.githubusercontent.com/u/309354?v=3&s=60" width="60">](https://github.com/GRoguelon)[<img alt="lugovsky" src="https://avatars3.githubusercontent.com/u/2788046?v=3&s=60" width="60">](https://github.com/lugovsky)[<img alt="kaleguy" src="https://avatars3.githubusercontent.com/u/1402176?v=3&s=60" width="60">](https://github.com/kaleguy)[<img alt="KostyaDanovsky" src="https://avatars3.githubusercontent.com/u/773632?v=3&s=60" width="60">](https://github.com/KostyaDanovsky)
+
+[<img alt="RonnyRoos" src="https://avatars2.githubusercontent.com/u/6583791?v=3&s=60" width="60">](https://github.com/RonnyRoos)[<img alt="gavinzhou" src="https://avatars2.githubusercontent.com/u/240780?v=3&s=60" width="60">](https://github.com/gavinzhou)[<img alt="kbrandwijk" src="https://avatars2.githubusercontent.com/u/852069?v=3&s=60" width="60">](https://github.com/kbrandwijk)[<img alt="stacyakveo" src="https://avatars2.githubusercontent.com/u/27723447?v=3&s=60" width="60">](https://github.com/stacyakveo)[<img alt="Awk34" src="https://avatars1.githubusercontent.com/u/5545474?v=3&s=60" width="60">](https://github.com/Awk34)[<img alt="pritambaral" src="https://avatars1.githubusercontent.com/u/1378718?v=3&s=60" width="60">](https://github.com/pritambaral)[<img alt="shootermv" src="https://avatars3.githubusercontent.com/u/1336862?v=3&s=60" width="60">](https://github.com/shootermv)[<img alt="tgabi333" src="https://avatars0.githubusercontent.com/u/187022?v=3&s=60" width="60">](https://github.com/tgabi333)[<img alt="Kaizeras" src="https://avatars0.githubusercontent.com/u/6340189?v=3&s=60" width="60">](https://github.com/Kaizeras)[<img alt="mterwoord" src="https://avatars1.githubusercontent.com/u/114143?v=3&s=60" width="60">](https://github.com/mterwoord)[<img alt="michaeljota" src="https://avatars3.githubusercontent.com/u/10507776?v=3&s=60" width="60">](https://github.com/michaeljota)[<img alt="nstanard" src="https://avatars2.githubusercontent.com/u/4204806?v=3&s=60" width="60">](https://github.com/nstanard)[<img alt="myadhdoutlet" src="https://avatars0.githubusercontent.com/u/18659465?v=3&s=60" width="60">](https://github.com/myadhdoutlet)[<img alt="smith64fx" src="https://avatars0.githubusercontent.com/u/3246782?v=3&s=60" width="60">](https://github.com/smith64fx)
+
+[<img alt="swaheed2" src="https://avatars1.githubusercontent.com/u/8592912?v=3&s=60" width="60">](https://github.com/swaheed2)[<img alt="susovan87" src="https://avatars0.githubusercontent.com/u/1897814?v=3&s=60" width="60">](https://github.com/susovan87)[<img alt="ThomasDupuis" src="https://avatars2.githubusercontent.com/u/1278762?v=3&s=60" width="60">](https://github.com/ThomasDupuis)[<img alt="turnerguo" src="https://avatars3.githubusercontent.com/u/633880?v=3&s=60" width="60">](https://github.com/turnerguo)[<img alt="anhuisunfei" src="https://avatars0.githubusercontent.com/u/5771096?v=3&s=60" width="60">](https://github.com/anhuisunfei)[<img alt="blackholegalaxy" src="https://avatars3.githubusercontent.com/u/11064123?v=3&s=60" width="60">](https://github.com/blackholegalaxy)[<img alt="bnayalivne" src="https://avatars0.githubusercontent.com/u/20381085?v=3&s=60" width="60">](https://github.com/bnayalivne)[<img alt="dimkk" src="https://avatars0.githubusercontent.com/u/4674044?v=3&s=60" width="60">](https://github.com/dimkk)[<img alt="geekow" src="https://avatars2.githubusercontent.com/u/12011794?v=3&s=60" width="60">](https://github.com/geekow)[<img alt="greenkeeperio-bot" src="https://avatars2.githubusercontent.com/u/14790466?v=3&s=60" width="60">](https://github.com/greenkeeperio-bot)[<img alt="pluswave" src="https://avatars0.githubusercontent.com/u/5653443?v=3&s=60" width="60">](https://github.com/pluswave)[<img alt="Guutong" src="https://avatars3.githubusercontent.com/u/10181975?v=3&s=60" width="60">](https://github.com/Guutong)[<img alt="Deilan" src="https://avatars1.githubusercontent.com/u/4777512?v=3&s=60" width="60">](https://github.com/Deilan)
+
+### From akveo
+
+Enjoy :metal:
+We're always happy to receive your feedback!
