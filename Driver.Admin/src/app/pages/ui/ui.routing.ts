@@ -1,4 +1,4 @@
-import { Routes, RouterModule }  from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
 import { Ui } from './ui.component';
 import { Buttons } from './components/buttons/buttons.component';
@@ -20,8 +20,8 @@ const routes: Routes = [
       { path: 'typography', component: Typography },
       { path: 'modals', component: Modals },
       { path: 'slim', component: SlimComponent },
-    ]
-  }
+    ],
+  },
 ];
 
 export const routing = RouterModule.forChild(routes);
