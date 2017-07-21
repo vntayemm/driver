@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 
 @Injectable()
 export class FeedService {
@@ -112,7 +112,7 @@ export class FeedService {
       time: '18.11.2015',
       ago: '9 days ago',
       expanded: false,
-    }
+    },
   ];
 
   getData() {
