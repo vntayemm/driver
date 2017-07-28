@@ -1,7 +1,7 @@
 {
   "login": {
-    "title": "Sign in to ng2-admin",
-    "signup_link": "New to ng2-admin? Sign up!",
+    "title": "Sign in to Driver-License",
+    "signup_link": "New to Driver-License? Sign up!",
     "email": "Email",
     "password": "Password",
     "sign_in": "Sign in",
@@ -51,7 +51,7 @@
       "menu_level_1_2_1": "Menu Level 1.2.1",
       "external_link": "External Link"
     },
-    "created_with": "Created with"
+    "created_with": "I love you!"
   },
   "dashboard": {
     "acquisition_channels": "Acquisition Channels",
