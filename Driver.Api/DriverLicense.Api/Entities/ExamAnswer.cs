@@ -1,10 +1,10 @@
-﻿namespace DriverLicense.Api.Models
+﻿namespace DriverLicense.Api.Entities
 {
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("ExamQuestion")]
-    public class ExamQuestion
+    [Table("ExamAnswer")]
+    public class ExamAnswer
     {
         [Key]
         [Column(Order = 0)]
@@ -12,6 +12,10 @@
         [Key]
         [Column(Order = 1)]
         public int QuestionId { get; set; }
+        [Key]
+        [Column(Order = 2)]
+        public int AnswerId { get; set; }
         public string Content { get; set; }
+        public bool IsRight { get; set; }
     }
 }

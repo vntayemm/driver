@@ -1,14 +1,14 @@
-﻿namespace DriverLicense.Api.Models
+﻿namespace DriverLicense.Api.Entities
 {
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("ExamQuestionCode")]
-    public class ExamQuestionCode
+    [Table("DriverExam")]
+    public class DriverExam
     {
         [Key]
         [Column(Order = 0)]
-        public int QuestionNumber { get; set; }
+        public int DriverId { get; set; }
         [Key]
         [Column(Order = 1)]
         public int ExamCode { get; set; }
@@ -17,7 +17,10 @@
         public int ExamSessionId { get; set; }
         [Key]
         [Column(Order = 3)]
-        public int QuestionId { get; set; }
-        public bool IsLocked { get; set; }
+        public int ExamQuestionId { get; set; }
+        [Key]
+        [Column(Order = 4)]
+        public int ExamAnswerId { get; set; }
+        public bool IsChoosed { get; set; }
     }
 }

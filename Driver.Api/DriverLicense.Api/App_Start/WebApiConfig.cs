@@ -1,6 +1,6 @@
 ﻿using System.Web.Http;
 using System.Web.OData.Extensions;
-using DriverLicense.Api.Models;
+using DriverLicense.Api.Entities;
 using Microsoft.Restier.Providers.EntityFramework;
 using Microsoft.Restier.Publishers.OData.Batch;
 using Microsoft.Restier.Publishers.OData;

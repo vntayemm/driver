@@ -163,20 +163,20 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Answer.cs" />
-    <Compile Include="Models\AnswerTemplate.cs" />
-    <Compile Include="Models\DriverLicenseContext.cs" />
-    <Compile Include="Models\DriverExam.cs" />
-    <Compile Include="Models\ExamAnswer.cs" />
-    <Compile Include="Models\ExamAnswerCode.cs" />
-    <Compile Include="Models\ExamQuestion.cs" />
-    <Compile Include="Models\ExamQuestionCode.cs" />
-    <Compile Include="Models\ExamSession.cs" />
-    <Compile Include="Models\ExamTemplate.cs" />
-    <Compile Include="Models\Question.cs" />
-    <Compile Include="Models\QuestionTemplate.cs" />
-    <Compile Include="Models\Subject.cs" />
-    <Compile Include="Models\SubjectQuestion.cs" />
+    <Compile Include="Entities\Answer.cs" />
+    <Compile Include="Entities\AnswerTemplate.cs" />
+    <Compile Include="Entities\DriverLicenseContext.cs" />
+    <Compile Include="Entities\DriverExam.cs" />
+    <Compile Include="Entities\ExamAnswer.cs" />
+    <Compile Include="Entities\ExamAnswerCode.cs" />
+    <Compile Include="Entities\ExamQuestion.cs" />
+    <Compile Include="Entities\ExamQuestionCode.cs" />
+    <Compile Include="Entities\ExamSession.cs" />
+    <Compile Include="Entities\ExamTemplate.cs" />
+    <Compile Include="Entities\Question.cs" />
+    <Compile Include="Entities\QuestionTemplate.cs" />
+    <Compile Include="Entities\Subject.cs" />
+    <Compile Include="Entities\SubjectQuestion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

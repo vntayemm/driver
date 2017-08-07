@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity;
 
-namespace DriverLicense.Api.Models
+namespace DriverLicense.Api.Entities
 {
     public partial class DriverLicenseContext : DbContext
     {

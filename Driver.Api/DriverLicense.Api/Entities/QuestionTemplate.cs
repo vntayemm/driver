@@ -1,4 +1,4 @@
-﻿namespace DriverLicense.Api.Models
+﻿namespace DriverLicense.Api.Entities
 {
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
